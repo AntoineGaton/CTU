@@ -4,7 +4,18 @@ using namespace std;
 
 int main()
 {
-   string passwdStr;
+   changeNumberToLetter();
+   cout << "***********************" << endl;
+   changeNumberToNumber();
+   cout << "***********************" << endl;
+   goodPassword();
+   
+   return 0;
+}
+
+void changeNumberToLetter()
+{
+      string passwdStr;
    unsigned int i;
 
    cout << "Enter password: ";
@@ -25,5 +36,47 @@ int main()
    sleep(2);
    cout << "Valid password: " << passwdStr << endl;
 
-   return 0;
+}
+
+void changeNumberToNumber(){
+   string passwordStr;
+   int i;
+   
+   cin >> passwordStr;
+   i = 0;
+
+   string searchString = "1111";
+   string replacementStr = "2785";
+   size_t foundPos;
+
+   while ((foundPos = passwordStr.find(searchString)) != string::npos) {
+      passwordStr.replace(foundPos, searchString.length(), replacementStr);
+   }
+
+   cout << "Updated password: " << passwordStr << endl;
+}
+
+void goodPassword(){
+    string keyString;
+   bool goodPassword = true;
+   int digitCount = 0;
+   
+   cin >> keyString;
+   
+   for (char c : keyString) {
+      if (isdigit(c)) {
+         digitCount++;
+      }
+   }
+
+   if (digitCount >= 6 || keyString.length() > 9) {
+      goodPassword = false;
+   }
+    
+   if (goodPassword) {
+      cout << "Valid" << endl;
+   }
+   else {
+      cout << "Invalid" << endl;
+   }
 }
