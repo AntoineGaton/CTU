@@ -1,0 +1,64 @@
+'''
+Binary Space Partitioning (BSP) is a method for recursively subdividing a space into convex sets by using hyperplanes. This technique is commonly used in computer graphics, particularly in the field of 3D rendering and game development. The concept originated from the need to efficiently determine what parts of a three-dimensional space should be rendered and in what order, to correctly portray the scene from the viewer's perspective.
+'''
+import pygame
+import random
+
+# Initialize Pygame
+pygame.init()
+
+# Set up display dimensions
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("BSP Example")
+
+# Function to draw a partition line
+def draw_partition(x, y, horizontal, length):
+   # Draw a horizontal or vertical line based on the 'horizontal' parameter
+   if horizontal:
+      pygame.draw.line(screen, (255, 0, 0), (x, y), (x + length, y), 1)
+   else:
+      pygame.draw.line(screen, (0, 255, 0), (x, y), (x, y + length), 1)
+
+# Function to recursively partition the space
+def partition_space(x, y, width, height, depth):
+   # Stop partitioning if maximum depth is reached or space is too small
+   if depth == 0 or width < 2 or height < 2:
+      return
+   
+   # Randomly choose to partition horizontally or vertically
+   horizontal = random.choice([True, False])
+
+   # Partition horizontally
+   if horizontal:
+      split = random.randint(1, height - 1)
+      draw_partition(x, y + split, horizontal, width)
+      # Recursively partition the two new spaces
+      partition_space(x, y, width, split, depth - 1)
+      partition_space(x, y + split, width, height - split, depth - 1)
+   # Partition vertically
+   else:
+      split = random.randint(1, width - 1)
+      draw_partition(x + split, y, horizontal, height)
+      # Recursively partition the two new spaces
+      partition_space(x, y, split, height, depth - 1)
+      partition_space(x + split, y, width - split, height, depth - 1)
+
+# Clear the screen and partition the space once before the loop
+screen.fill((0, 0, 0))
+partition_space(0, 0, WIDTH, HEIGHT, 4)
+pygame.display.flip()
+
+# Main game loop
+running = True
+while running:
+   # Check for Pygame events (like window closing)
+   for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+         running = False
+
+   # Update the display
+   pygame.display.flip()
+
+# Quit Pygame when the loop ends
+pygame.quit()
