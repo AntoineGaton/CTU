@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="44dp"
+        android:text="Order Form"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#71AD47"
+        android:textSize="105px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Customer_Order_ID_Label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/Customer_Order_ID_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Enter customer order ID..."
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/Customer_Order_ID_Label"
+        app:layout_constraintTop_toTopOf="@+id/Customer_Order_ID_Label" />
+
+    <EditText
+        android:id="@+id/Order_Name_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Enter order name..."
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Order_Name_Label"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Order_ID_Input" />
+
+    <TextView
+        android:id="@+id/Order_Name_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="#71AD47"
+        android:padding="20px"
+        android:text="Order Name"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Order_Name_Input" />
+
+    <TextView
+        android:id="@+id/Order_Fulfilled_By_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:background="#71AD47"
+        android:padding="20px"
+        android:text="Order Fulfilled By"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Order_Quantity_Label" />
+
+    <EditText
+        android:id="@+id/Order_Quantity_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Enter a quantity of orders..."
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/Order_Quantity_Label"
+        app:layout_constraintTop_toBottomOf="@+id/Order_Name_Input" />
+
+    <TextView
+        android:id="@+id/Order_Quantity_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:background="#71AD47"
+        android:padding="20px"
+        android:text="Order Quantity"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Order_Name_Label" />
+
+    <Button
+        android:id="@+id/Next_Button"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="72dp"
+        android:background="#5B9BD5"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Order_FulfilledBy_Input" />
+
+    <EditText
+        android:id="@+id/Order_FulfilledBy_Input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:drawableEnd="@android:drawable/ic_menu_today"
+        android:focusable="false"
+        android:hint="Select fulfillment date"
+        app:layout_constraintStart_toEndOf="@+id/Order_Fulfilled_By_Label"
+        app:layout_constraintTop_toBottomOf="@+id/Order_Quantity_Input" />
+
+    <TextView
+        android:id="@+id/Customer_Order_ID_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="200dp"
+        android:background="#71AD47"
+        android:padding="20px"
+        android:text="Customer Order ID"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

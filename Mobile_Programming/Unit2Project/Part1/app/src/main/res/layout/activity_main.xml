@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginTop="69dp"
+        android:text="Customer Form"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#5B9BD5"
+        android:textSize="105px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Customer_Name_Label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <TextView
+        android:id="@+id/Customer_Name_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="288dp"
+        android:text="Customer Name"
+        android:padding="20px"
+        android:background="#5B9BD5"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Customer_Name_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter customer name..."
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/Customer_Name_Label"
+        app:layout_constraintTop_toTopOf="@+id/Customer_Name_Label" />
+
+    <TextView
+        android:id="@+id/Customer_ID_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Customer ID"
+        android:background="#5B9BD5"
+        android:textColor="#FFFFFF"
+        android:padding="20px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Customer_ID_Input" />
+
+    <!--ID INPUT-->
+    <EditText
+        android:id="@+id/Customer_ID_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Enter customer ID..."
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Customer_ID_Label"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Name_Input" />
+
+    <TextView
+        android:id="@+id/Customer_Address_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:text="Customer Address"
+        android:background="#5B9BD5"
+        android:textColor="#FFFFFF"
+        android:padding="20px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_ID_Label" />
+
+    <EditText
+        android:id="@+id/Customer_Address_Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Enter customer address..."
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/Customer_Address_Label"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_ID_Input" />
+
+    <Button
+        android:id="@+id/Submit_Button"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="40dp"
+        android:background="#5B9BD5"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_Address_Input" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
