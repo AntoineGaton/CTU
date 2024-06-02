@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "665411394d3ab5f7f06a8c3d",
+    "index": 6,
+    "guid": "22dd94fb-fa37-48fc-9e22-48a03c8481b5",
+    "isActive": true,
+    "balance": "$1,872.62",
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "eyeColor": "green",
+    "name": "Trisha Lang",
+    "gender": "female",
+    "company": "XEREX",
+    "email": "trishalang@xerex.com",
+    "phone": "+1 (885) 596-3014",
+    "address": "189 Brown Street, Harleigh, Kansas, 1197",
+    "about": "Veniam ad do mollit sit duis consectetur et id reprehenderit. Anim quis consectetur exercitation anim qui incididunt proident occaecat dolor aliqua et. Deserunt excepteur mollit aute consectetur incididunt anim.\r\n",
+    "registered": "2021-12-18T10:31:31 +05:00",
+    "latitude": 19.84374,
+    "longitude": 50.91,
+    "tags": [
+      "elit",
+      "sunt",
+      "et",
+      "sunt",
+      "adipisicing",
+      "ad",
+      "id"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Vicki Wood"
+      },
+      {
+        "id": 1,
+        "name": "Hester Conrad"
+      },
+      {
+        "id": 2,
+        "name": "Knight Burns"
+      }
+    ],
+    "greeting": "Hello, Trisha Lang! You have 2 unread messages.",
+    "favoriteFruit": "apple"
+  }
+]
