@@ -41,20 +41,17 @@ public class JavaMongoDB {
      * @param args takes an optional single argument for the connection string
      */
     public static void main(final String[] args) {
-        MongoClient mongoClient;
+        // Creating a Mongo client
+        Mongo client = new Mongo("localhose", 27017);
 
-        if (args.length == 0) {
-            // connect to the local database server
-            mongoClient = MongoClients.create();
-        } else {
-            mongoClient = MongoClients.create(args[0]);
+        // Accessing the database
+        DB database = mongo.getDB("Unit5");
+
+        //List All Databases
+        List<String> dbs = mongo.getDatabaseNames();
+        for(String db : dbs){
+            System.out.println(db);
         }
-
-        // get handle to "mydb" database
-        MongoDatabase database = mongoClient.getDatabase("mydb");
-
-        // add code to create a collection.  Print results to console
-        // System.out.println();
 
         // drop all the data in it
         // collection.drop();
@@ -63,9 +60,9 @@ public class JavaMongoDB {
         // System.out.println(myDoc.toJson());
 
         // Clean up
-        database.drop();
+//        database.drop();
 
         // release resources
-        mongoClient.close();
+//        mongoClient.close();
     }
 }
