@@ -6,33 +6,33 @@ A modern, responsive pizza ordering website built with Next.js 13, TypeScript, a
 
 - Modern, responsive design
 - Animated hero section with video background
-- Featured deals showcase
-- Popular pizzas gallery
-- Mobile-friendly navigation
-- Dark mode support
+- Featured deals showcase with hover effects
+- Popular pizzas gallery with dynamic loading
+- Mobile-friendly navigation with animated drawer
+- Shopping cart with persistent storage
 - Smooth scrolling animations
+- Custom pizza builder with real-time pricing
 
 ## 🛠 Recent Updates
 
-- Added responsive navigation with animated mobile menu
-- Implemented featured deals section with hover animations
-- Added popular pizzas gallery with dynamic loading
-- Integrated shadcn/ui components for consistent design
-- Added pizza customization with ingredient selection
-- Implemented dark mode support
-- Added smooth scrolling animations using Framer Motion
-- Created reusable UI components with TypeScript
-- Added price calculation utilities for custom pizzas
-- Implemented responsive image handling with Next.js Image component
+- Added shopping cart with Zustand state management
+- Implemented cart drawer with animations
+- Added persistent cart storage
+- Created pizza customization system
+- Implemented dynamic price calculations
+- Added ingredient selection interface
+- Enhanced mobile navigation drawer
+- Integrated popular pizzas with dynamic image loading
+- Added smooth scrolling animations
+- Implemented responsive image handling
 
 ## 🎯 Key Features
 
-- Modern, responsive navigation with animated transitions
+- Shopping cart with persistent storage
+- Modern, responsive navigation with animated drawer
 - Featured deals showcase with hover effects
 - Popular pizzas gallery with dynamic data loading
 - Pizza customization with real-time price updates
-- Dark mode support with theme persistence
-- Smooth scrolling and hover animations
 - Mobile-first responsive design
 - Type-safe component architecture
 - Optimized image loading and caching
@@ -45,24 +45,33 @@ A modern, responsive pizza ordering website built with Next.js 13, TypeScript, a
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn/ui
 - **Animations**: Framer Motion
+- **State Management**: Zustand
 - **Icons**: Lucide React
+- **Image Loading**: Next.js Image + Unsplash API
 
 ## 📦 Project Structure
 
 ```tree
 doughdoughs-pizza/
 ├── app/
-│   ├── layout.tsx       # Root layout
-│   ├── page.tsx         # Home page
-│   └── globals.css      # Global styles
+│ ├── layout.tsx # Root layout
+│ ├── page.tsx # Home page
+│ └── globals.css # Global styles
 ├── components/
-│   ├── HeroSection.tsx  # Hero video section
-│   ├── NavBar.tsx       # Navigation bar
-│   ├── FeaturedDeals.tsx# Deals section
-│   ├── PopularPizzas.tsx# Popular pizzas section
-│   └── ui/             # Reusable UI components
-└── public/
-    └── logo.png        # Site logo
+│ ├── HeroSection.tsx # Hero video section
+│ ├── NavBar.tsx # Navigation bar
+│ ├── CartDrawer.tsx # Shopping cart drawer
+│ ├── FeaturedDeals.tsx# Deals section
+│ ├── PopularPizzas.tsx# Popular pizzas section
+│ └── ui/ # Reusable UI components
+├── hooks/
+│ └── useCart.ts # Cart state management
+├── data/
+│ ├── pizzas.ts # Pizza data and types
+│ └── ingredients.ts # Ingredients data
+└── utils/
+├── images.ts # Image handling utilities
+└── calculatePizzaPrice.ts # Price calculations
 ```
 
 ## 🚀 Getting Started
@@ -141,15 +150,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 🔮 Future Plans
 
 - User authentication
-- Shopping cart functionality
 - Order tracking system
 - Payment integration
 - Admin dashboard
 - Real-time order updates
-
----
-
-**Note**: This is a work in progress. More features and documentation will be added as the project develops.
+- Order history
+- Delivery status tracking
+- Customer reviews system
 
 ## 🔧 Technical Highlights
 
@@ -158,8 +165,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Tailwind CSS for styling
 - shadcn/ui for UI components
 - Framer Motion for animations
-- Custom hooks for state management
-- Utility functions for price calculations
-- Responsive image optimization
+- Zustand for state management
+- Dynamic image loading with Unsplash API
 - Component-driven architecture
-- Dark mode with next-themes
+- Responsive drawer components
+- Cart functionality with persistent state
+- Custom hooks for state management
+- Price calculation utilities
+
+---
+
+**Note**: This project is actively being developed with new features being added regularly.
