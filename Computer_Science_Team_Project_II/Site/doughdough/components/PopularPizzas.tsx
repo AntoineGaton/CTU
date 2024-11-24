@@ -1,41 +1,22 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-const pizzas = [
-  {
-    id: 1,
-    name: "Supreme",
-    description: "Pepperoni, Italian sausage, mushrooms, onions, green peppers",
-    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&auto=format&fit=crop&q=60",
-    price: "18.99"
-  },
-  {
-    id: 2,
-    name: "Margherita",
-    description: "Fresh mozzarella, tomatoes, basil on our signature sauce",
-    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&auto=format&fit=crop&q=60",
-    price: "16.99"
-  },
-  {
-    id: 3,
-    name: "BBQ Chicken",
-    description: "Grilled chicken, bacon, onions with sweet BBQ sauce",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
-    price: "17.99"
-  },
-  {
-    id: 4,
-    name: "Meat Lovers",
-    description: "Pepperoni, sausage, ham, bacon, seasoned pork, beef",
-    image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&auto=format&fit=crop&q=60",
-    price: "19.99"
-  }
-];
+import { Pizza } from "@/data/pizzas";
+import { initializePizzas } from "@/data/pizzas";
 
 export function PopularPizzas() {
+  const [pizzas, setPizzas] = useState<Pizza[]>([]);
+
+  useEffect(() => {
+    initializePizzas().then((allPizzas) => {
+      const popularPizzas = allPizzas.filter(pizza => pizza.isPopular);
+      setPizzas(popularPizzas);
+    });
+  }, []);
+
   return (
     <section className="py-12">
       <div className="border-t-2 border-b-2 border-red-600 py-8 my-8">
@@ -57,7 +38,7 @@ export function PopularPizzas() {
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src={pizza.image}
+                  src={pizza.image.toString()}
                   alt={pizza.name}
                   fill
                   className="object-cover"

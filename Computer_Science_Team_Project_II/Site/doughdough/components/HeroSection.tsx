@@ -13,16 +13,19 @@ export function HeroSection() {
 
   return (
     <div className="relative w-screen h-[calc(100vh-80px)]">
-      <div className="absolute inset-0 bg-black/40" />
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute w-screen h-full object-cover"
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 border-t-2 border-b-2 border-secondary">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover
+            sm:object-[center_center] md:object-[center_center] lg:object-cover
+            sm:scale-[1.5] md:scale-[1.2] lg:scale-100"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      </div>
 
       {/* Bouncing Chevron */}
       <div 
