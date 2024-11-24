@@ -12,6 +12,32 @@ A modern, responsive pizza ordering website built with Next.js 13, TypeScript, a
 - Dark mode support
 - Smooth scrolling animations
 
+## 🛠 Recent Updates
+
+- Added responsive navigation with animated mobile menu
+- Implemented featured deals section with hover animations
+- Added popular pizzas gallery with dynamic loading
+- Integrated shadcn/ui components for consistent design
+- Added pizza customization with ingredient selection
+- Implemented dark mode support
+- Added smooth scrolling animations using Framer Motion
+- Created reusable UI components with TypeScript
+- Added price calculation utilities for custom pizzas
+- Implemented responsive image handling with Next.js Image component
+
+## 🎯 Key Features
+
+- Modern, responsive navigation with animated transitions
+- Featured deals showcase with hover effects
+- Popular pizzas gallery with dynamic data loading
+- Pizza customization with real-time price updates
+- Dark mode support with theme persistence
+- Smooth scrolling and hover animations
+- Mobile-first responsive design
+- Type-safe component architecture
+- Optimized image loading and caching
+- Modular UI component system
+
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 13
@@ -124,3 +150,16 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 **Note**: This is a work in progress. More features and documentation will be added as the project develops.
+
+## 🔧 Technical Highlights
+
+- Built with Next.js 13 App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- shadcn/ui for UI components
+- Framer Motion for animations
+- Custom hooks for state management
+- Utility functions for price calculations
+- Responsive image optimization
+- Component-driven architecture
+- Dark mode with next-themes
