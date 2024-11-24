@@ -54,7 +54,7 @@ export const pizzas: Pizza[] = [
     image: getPizzaImage("margherita pizza"),
     price: "16.99",
     ingredients: ['mozzarella', 'tomatoes', 'basil', 'tomato-sauce'],
-    isPopular: true
+    isPopular: false
   },
   {
     id: 3,
@@ -63,7 +63,7 @@ export const pizzas: Pizza[] = [
     image: getPizzaImage("bbq chicken pizza"),
     price: "17.99",
     ingredients: ['chicken', 'bacon', 'onions', 'bbq-sauce'],
-    isPopular: false
+    isPopular: true
   },
   {
     id: 4,
@@ -128,5 +128,95 @@ export const pizzas: Pizza[] = [
     ingredients: ['thick-crust'],
     isCustom: true,
     isPopular: true
+  },
+  {
+    id: 11,
+    name: "Four Cheese",
+    description: "Mozzarella, parmesan, gorgonzola, and ricotta cheese blend",
+    image: getPizzaImage("four cheese pizza"),
+    price: "17.99",
+    ingredients: ['mozzarella', 'parmesan', 'gorgonzola', 'ricotta', 'tomato-sauce'],
+    isPopular: true
+  },
+  {
+    id: 12,
+    name: "White Pizza",
+    description: "Olive oil base, roasted garlic, ricotta, and mozzarella",
+    image: getPizzaImage("white pizza"),
+    price: "16.99",
+    ingredients: ['olive-oil', 'garlic', 'ricotta', 'mozzarella'],
+    isPopular: false
+  },
+  {
+    id: 13,
+    name: "Pesto Delight",
+    description: "Basil pesto base, chicken, sun-dried tomatoes, pine nuts",
+    image: getPizzaImage("pesto pizza"),
+    price: "18.99",
+    ingredients: ['pesto-sauce', 'chicken', 'sun-dried-tomatoes', 'pine-nuts', 'mozzarella'],
+    isPopular: false
+  },
+  {
+    id: 14,
+    name: "Greek",
+    description: "Kalamata olives, red onions, green peppers, tomatoes, feta",
+    image: getPizzaImage("greek pizza"),
+    price: "17.99",
+    ingredients: ['kalamata-olives', 'red-onions', 'green-peppers', 'tomatoes', 'feta'],
+    isPopular: false
+  },
+  {
+    id: 15,
+    name: "Spinach & Ricotta",
+    description: "Fresh spinach, ricotta, garlic, and mozzarella",
+    image: getPizzaImage("spinach ricotta pizza"),
+    price: "16.99",
+    ingredients: ['spinach', 'ricotta', 'garlic', 'mozzarella', 'tomato-sauce'],
+    isPopular: false
+  },
+  {
+    id: 16,
+    name: "Seafood Special",
+    description: "Shrimp, calamari, mussels, garlic, and fresh herbs",
+    image: getPizzaImage("seafood pizza"),
+    price: "21.99",
+    ingredients: ['shrimp', 'calamari', 'mussels', 'garlic', 'herbs', 'mozzarella'],
+    isPopular: false
+  },
+  {
+    id: 17,
+    name: "Breakfast Pizza",
+    description: "Eggs, bacon, hash browns, and cheddar cheese",
+    image: getPizzaImage("breakfast pizza"),
+    price: "16.99",
+    ingredients: ['eggs', 'bacon', 'hash-browns', 'cheddar', 'mozzarella'],
+    isPopular: false
+  },
+  {
+    id: 18,
+    name: "Taco Supreme",
+    description: "Seasoned ground beef, lettuce, tomatoes, cheddar, tortilla chips",
+    image: getPizzaImage("taco pizza"),
+    price: "18.99",
+    ingredients: ['ground-beef', 'lettuce', 'tomatoes', 'cheddar', 'tortilla-chips', 'taco-sauce'],
+    isPopular: false
+  },
+  {
+    id: 19,
+    name: "Chicken Alfredo",
+    description: "Creamy alfredo sauce, grilled chicken, mushrooms, broccoli",
+    image: getPizzaImage("chicken alfredo pizza"),
+    price: "19.99",
+    ingredients: ['alfredo-sauce', 'chicken', 'mushrooms', 'broccoli', 'mozzarella'],
+    isPopular: true
+  },
+  {
+    id: 20,
+    name: "Nutella Dessert",
+    description: "Sweet pizza with Nutella, banana, strawberries, and powdered sugar",
+    image: getPizzaImage("nutella dessert pizza"),
+    price: "14.99",
+    ingredients: ['nutella', 'banana', 'strawberries', 'powdered-sugar'],
+    isPopular: false
   }
 ]; 

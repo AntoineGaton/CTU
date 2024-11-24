@@ -1,60 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { Menu as MenuIcon, X } from "lucide-react";
+import { Menu as MenuIcon, X, ShoppingCart, User, Pizza, Tag, Clock, MapPin, Users, MessageSquare, HelpCircle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/hooks/useCart";
+import { CartDrawer } from "@/components/CartDrawer";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+} from "@/components/ui/drawer"
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { itemCount } = useCart();
 
   const menuItems = [
-    { href: "/deals", label: "Deals" },
-    { href: "/menu", label: "Menu" },
-    { href: "/track", label: "Track Order" },
+    { href: "/deals", label: "Deals", icon: <Tag className="h-5 w-5" /> },
+    { href: "/menu", label: "Menu", icon: <Pizza className="h-5 w-5" /> },
+    { href: "/track", label: "Track Order", icon: <Clock className="h-5 w-5" /> },
+    { href: "/about", label: "About Us", icon: <Users className="h-5 w-5" /> },
+    { href: "/contact", label: "Contact", icon: <MessageSquare className="h-5 w-5" /> },
   ];
-
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-    },
-    open: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.3,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
-  const itemVariants = {
-    closed: {
-      opacity: 0,
-      y: 50,
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.6, 0.05, -0.01, 0.9],
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: 30,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
 
   return (
     <nav className="sticky top-0 z-50 bg-primary">
@@ -87,44 +58,80 @@ export function NavBar() {
             </Link>
           </div>
 
-          {/* Right - Order Button */}
-          <div className="w-[100px] flex justify-end">
+          {/* Right - Login & Cart */}
+          <div className="w-[100px] flex items-center justify-end space-x-4">
             <Link
-              href="/order"
-              className="text-secondary border-2 border-secondary px-6 py-2 hover:bg-secondary hover:text-primary transition-colors"
+              href="/login"
+              className="text-secondary hover:text-black transition-colors"
+              aria-label="Login"
             >
-              ORDER
+              <User className="h-6 w-6" />
             </Link>
+            <p className="text-secondary">|</p>
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="text-secondary hover:text-black transition-colors relative"
+              aria-label="Shopping Cart"
+            >
+              <ShoppingCart className="h-6 w-6" />
+              {itemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {itemCount}
+                </span>
+              )}
+            </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute top-20 left-0 w-full bg-black/95 shadow-lg"
-          >
-            <div className="px-4 py-2 flex flex-col items-center">
-              {menuItems.map((item, index) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  className="block py-4 text-white hover:text-secondary text-lg"
+      <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+        <DrawerContent>
+          <DrawerHeader className="text-4xl font-semibold text-center text-secondary mx-auto">Menu</DrawerHeader>
+          <motion.div 
+            className="border-b border-1 border-secondary mx-auto"
+            initial={{ width: "0%" }}
+            animate={{ width: "25%" }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          ></motion.div>
+          <div className="px-4 py-2"> 
+            {menuItems.map((item, index) => (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.3 + index * 0.1,
+                  ease: "easeOut"
+                }}
+              >
+                <Link
+                  href={item.href}
+                  className="flex items-center justify-center gap-3 py-4 text-lg hover:text-secondary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  {item.icon}
+                  <span>{item.label}</span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          <DrawerFooter>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full bg-secondary text-white py-2 rounded-md hover:bg-secondary/90 transition-colors"
+            >
+              Close Menu
+            </button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+
+      <CartDrawer 
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+      />
     </nav>
   );
 }
