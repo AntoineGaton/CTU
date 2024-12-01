@@ -1,0 +1,13 @@
+Test Case ID,Test Type,Functionality,Test Steps,Expected Result
+FT-01,Functional Test,Search a topic,Enter a search query and check results,Relevant results are displayed
+FT-02,Functional Test,Search and Locate a Branch,Locate a branch using ZIP code,Correct branch is located
+FT-03,Functional Test,Make an appointment,Make an appointment via the form,Appointment is successfully scheduled
+PT-01,Performance Test,Search a topic,Measure response time for search,Search is completed under 3 seconds
+PT-02,Performance Test,Search and Locate a Branch,Measure response time for branch location,Branch is located under 3 seconds
+PT-03,Performance Test,Make an appointment,Measure response time for appointment creation,Appointment is scheduled under 5 seconds
+AT-01,Acceptance Test,Search a topic,Verify search results meet requirements,Search results meet expectations
+AT-02,Acceptance Test,Search and Locate a Branch,Verify branch location details are correct,Branch location details are accurate
+AT-03,Acceptance Test,Make an appointment,Verify appointment confirmation details,Appointment confirmation matches details
+ST-01,System Test,Search a topic,Test full functionality of search system,Search system operates as expected
+ST-02,System Test,Search and Locate a Branch,Test integration of branch locator,Branch locator works seamlessly
+ST-03,System Test,Make an appointment,Test end-to-end appointment system,Appointment system completes successfully
